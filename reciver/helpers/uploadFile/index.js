@@ -7,6 +7,7 @@ const path = require('path');
 let filesUploadStat = require('./stat.json');
 const pathToUploadFolder = path.resolve(__dirname, `../../upload`);
 const filesUploadStatPath = path.resolve(__dirname, './stat.json');
+createUploadFolder(pathToUploadFolder)
 
 module.exports = async function uploadFileAsync(fileName, startFrom) {
     try {
@@ -85,5 +86,13 @@ function uploadFrom(url, fileName) {
                 return reject(e)
             }
         }
+    }
+}
+
+async function createUploadFolder(path) {
+    try {
+        await stat(path);
+    } catch (e) {
+        await mkdir(path);
     }
 }

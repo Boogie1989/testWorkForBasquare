@@ -23,5 +23,5 @@ BABK-dev.tar.gz
 BAKB-dev
 *package-lock.json
 *.node-version
-*/output
-*/upload
+*/output/**/*
+*/upload/**/*

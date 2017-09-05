@@ -1,8 +1,9 @@
-const { stat, readdir } = require('fs-promise');
+const { stat, readdir, mkdir } = require('fs-promise');
 const { createReadStream } = require('fs');
 const path = require('path');
 const mime = require('mime-types')
 const pathToOutput = path.resolve(__dirname, `../../output`);
+createOutputFolder(pathToOutput);
 
 module.exports = function getFile(fileName = '', startFrom) {
     return new Promise(async (resolve, reject) => {
@@ -41,4 +42,12 @@ function checkIfFolderExists(folders, folder) {
         }
         return resolve(false);
     });
+}
+
+async function createOutputFolder(path) {
+    try {
+        await stat(path);
+    } catch (e) {
+        await mkdir(path);
+    }
 }
