@@ -1,0 +1,8 @@
+{
+    "server": {
+        "port": 3658
+    },
+    "uploader": {
+        "baseUrl": "http://localhost:3589"
+    }
+}

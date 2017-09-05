@@ -1,0 +1,21 @@
+{
+  "name": "reciver",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "combined-stream": "^1.0.5",
+    "config": "^1.26.2",
+    "cors": "^2.8.4",
+    "fs-promise": "^2.0.3",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1"
+  }
+}
